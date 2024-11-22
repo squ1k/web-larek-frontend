@@ -1,106 +1,30 @@
-import { ApiListResponse } from '../components/base/api';
-
-/**
- * Модель продукта
- */
-export interface Product {
-    /**
-    * ID товара
-    */
-    id: number;
-
-    /**
-    * Название товара
-    */
-    name: string;
-
-    /**
-    * Описание товара
-    */
-    description: string;
-
-    /**
-    * Изображение товара
-    */
-    image: string;
-
-    /**
-    * Цена товара
-    */
-    price: number;
+export interface IProduct {
+	id: string;
+	description: string;
+	image: string;
+	title: string;
+	category: string;
+	price: number | null;
 }
 
-/**
- * Модель элемента корзины
- */
-export interface CartElement {
-    /**
-    * ID товара
-    */
-    id: number;
-
-    /**
-    * Количество товара в корзине
-    */
-    amount: number;
+export interface IOrder {
+	items: IProduct[];
+	payment: TPaymentMethod;
+	address: string;
+	email: string;
+	phone: string;
 }
 
-/**
- * Методы оплаты
- */
-export type PaymentMethod = 'online' | 'uponReceipt';
-
-/**
- * Модель заказа
- */
-export interface Order {
-    /**
-    * ID заказа
-    */
-    id: number;
-
-    /**
-    * Список товаров в корзине
-    */
-    items: CartElement[];
-
-    /**
-    * Метод оплаты
-    */
-    paymentMethod: PaymentMethod;
-
-    /**
-    * Телефон покупателя
-    */
-    phone: string;
-
-    /**
-    * E-mail покупателя
-    */
-    email: string;
-
-    /**
-    * Адрес покупателя
-    */
-    address: string;
+export interface IOrderResult {
+	id: string;
+	total: number;
 }
 
-/**
- * Модель ответа API на запрос
- */
-export interface Response<T> {
-    /**
-    * Статус запроса
-    */
-    status: boolean;
+export type TOrderInvoice = Omit<IOrder, 'items'> & {
+	items: string[];
+	total: number;
+};
 
-    /**
-    * Сообщение в ответе
-    */
-    message?: string;
+export type TPaymentMethod = 'cash' | 'card';
 
-    /**
-    * Данные с сервера
-    */
-    data: T;
-}
+export type TOrderStep = 'receiving' | 'contacts';
