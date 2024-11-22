@@ -20,7 +20,7 @@ import { OrderShipmentView, TOrderShipmentRenderArgs } from './components/order/
 import { OrderContactsView, TOrderContactsRenderArgs } from './components/order/OrderContactsView';
 import { OrderSuccessView, TOrderSuccessRenderArgs } from './components/order/OrderSuccessView';
 
-import { AppStateModelEvents, AppStateModel } from './models/global/AppState';
+import { AppStateModelEvents, AppStateModel } from './models/global/AppStateModel';
 
 import { ShopAPI } from './components/special/ShopAPI';
 
