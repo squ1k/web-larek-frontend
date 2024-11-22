@@ -1,6 +1,6 @@
 import { IEvents } from '../../components/base/events';
 
-export abstract class Model<T> {
+export abstract class AbstractModel<T> {
 	constructor(data: Partial<T>, protected eventEmitter: IEvents) {
 		Object.assign(this, data);
 	}

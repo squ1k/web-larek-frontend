@@ -1,6 +1,6 @@
 import { TOrderStep, IProduct, IOrder, TPaymentMethod } from '../../types';
 
-import { Model } from '../base/Model';
+import { AbstractModel } from '../base/AbstractModel';
 
 interface IAppState {
 	preview: IProduct;
@@ -20,7 +20,7 @@ enum AppStateModelEvents {
 	ORDER_RESET = 'order:reset'
 }
 
-class AppStateModel extends Model<IAppState> {
+class AppStateModel extends AbstractModel<IAppState> {
 	protected _step: TOrderStep = 'receiving';
 
 	preview: IProduct;
