@@ -1,4 +1,4 @@
-import { TViewConstructionArgs } from '../base/View';
+import { TViewConstructionArgs } from '../base/AbstractView';
 
 import { FormView, TFormEventHandlers, TFormRenderArgs } from '../global/FormView';
 

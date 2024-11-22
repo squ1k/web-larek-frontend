@@ -1,4 +1,4 @@
-import { TViewConstructionArgs, TViewNested, AbstractView } from '../base/View';
+import { TViewConstructionArgs, TViewNested, AbstractView } from '../base/AbstractView';
 
 type TBasketRenderArgs<T extends object> = {
 	items: TViewNested<T>[];

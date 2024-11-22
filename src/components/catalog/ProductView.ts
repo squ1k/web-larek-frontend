@@ -1,6 +1,6 @@
 import { IProduct } from '../../types';
 
-import { TViewConstructionArgs, AbstractView } from '../base/View';
+import { TViewConstructionArgs, AbstractView } from '../base/AbstractView';
 
 type TProductRenderArgs = Pick<IProduct, 'image' | 'title' | 'category'> & {
 	price: string;

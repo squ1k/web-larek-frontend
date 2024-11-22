@@ -1,4 +1,4 @@
-import { TViewConstructionArgs, TViewNested, AbstractView } from '../base/View';
+import { TViewConstructionArgs, TViewNested, AbstractView } from '../base/AbstractView';
 
 type TModalRenderArgs<T extends object> = {
 	content: TViewNested<T>;

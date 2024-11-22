@@ -1,4 +1,4 @@
-import { TViewConstructionArgs, AbstractView } from '../base/View';
+import { TViewConstructionArgs, AbstractView } from '../base/AbstractView';
 
 type TPageRenderArgs = {
 	isLocked: boolean;

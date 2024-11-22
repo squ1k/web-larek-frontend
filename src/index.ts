@@ -9,7 +9,7 @@ import { IOrder, IProduct, TOrderStep } from './types';
 
 import { ProductsListView } from './components/catalog/ProductsListView';
 import { ProductView, TProductRenderArgs } from './components/catalog/ProductView';
-import { TViewNested } from './components/base/View';
+import { TViewNested } from './components/base/AbstractView';
 import { PageView } from './components/global/PageView';
 import { HeaderView } from './components/global/HeaderView';
 import { ModalView, ModalViewEvents } from './components/global/ModalView';

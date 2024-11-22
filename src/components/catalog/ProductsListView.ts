@@ -1,4 +1,4 @@
-import { TViewNested, AbstractView } from '../base/View';
+import { TViewNested, AbstractView } from '../base/AbstractView';
 
 type TProductsRenderArgs<T extends object> = {
 	items: TViewNested<T>[];
