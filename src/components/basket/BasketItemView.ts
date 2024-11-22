@@ -1,4 +1,4 @@
-import { TViewConstructionArgs, View } from '../base/View';
+import { TViewConstructionArgs, AbstractView } from '../base/View';
 
 type TBasketItemRenderArgs = {
 	index: number;
@@ -10,7 +10,7 @@ type TBasketItemEventHandlers = {
 	onClick?: (args: { _event: MouseEvent }) => void;
 };
 
-class BasketItemView extends View<
+class BasketItemView extends AbstractView<
 	HTMLElement,
 	TBasketItemRenderArgs,
 	TBasketItemEventHandlers

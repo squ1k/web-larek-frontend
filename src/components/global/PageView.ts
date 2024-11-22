@@ -1,10 +1,10 @@
-import { TViewConstructionArgs, View } from '../base/View';
+import { TViewConstructionArgs, AbstractView } from '../base/View';
 
 type TPageRenderArgs = {
 	isLocked: boolean;
 };
 
-class PageView extends View<HTMLElement, TPageRenderArgs> {
+class PageView extends AbstractView<HTMLElement, TPageRenderArgs> {
 	protected _wrapperElement: HTMLElement;
 
 	constructor(args: TViewConstructionArgs) {

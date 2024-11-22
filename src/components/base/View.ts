@@ -20,7 +20,7 @@ type TViewNested<RenderArgs extends object = object> = {
 	renderArgs?: RenderArgs;
 };
 
-abstract class View<
+abstract class AbstractView<
 	Element extends HTMLElement = HTMLElement,
 	RenderArgs extends object = object,
 	EventHandlers extends object = object
@@ -52,4 +52,4 @@ abstract class View<
 	}
 }
 
-export { View, IView, TViewConstructionArgs, TViewNested };
+export { AbstractView, IView, TViewConstructionArgs, TViewNested };

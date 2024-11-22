@@ -1,4 +1,4 @@
-import { TViewConstructionArgs, View } from '../base/View';
+import { TViewConstructionArgs, AbstractView } from '../base/View';
 
 type TOrderSuccessRenderArgs = {
 	description: string;
@@ -8,7 +8,7 @@ type TOrderSuccessEventHandlers = {
 	onClick?: (args: { _event: MouseEvent }) => void;
 };
 
-class OrderSuccessView extends View<
+class OrderSuccessView extends AbstractView<
 	HTMLElement,
 	TOrderSuccessRenderArgs,
 	TOrderSuccessEventHandlers

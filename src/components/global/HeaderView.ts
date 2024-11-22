@@ -1,4 +1,4 @@
-import { TViewConstructionArgs, View } from '../base/View';
+import { TViewConstructionArgs, AbstractView } from '../base/View';
 
 type THeaderRenderArgs = {
 	counter: number;
@@ -8,7 +8,7 @@ type THeaderEventHandlers = {
 	onClick?: (args: { _event: MouseEvent }) => void;
 };
 
-class HeaderView extends View<HTMLElement, THeaderRenderArgs, THeaderEventHandlers> {
+class HeaderView extends AbstractView<HTMLElement, THeaderRenderArgs, THeaderEventHandlers> {
 	protected _counterElement: HTMLElement;
 	protected _buttonElement: HTMLButtonElement;
 

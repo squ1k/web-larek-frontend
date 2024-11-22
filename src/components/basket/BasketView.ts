@@ -1,4 +1,4 @@
-import { TViewConstructionArgs, TViewNested, View } from '../base/View';
+import { TViewConstructionArgs, TViewNested, AbstractView } from '../base/View';
 
 type TBasketRenderArgs<T extends object> = {
 	items: TViewNested<T>[];
@@ -10,7 +10,7 @@ type TBasketEventHandlers = {
 	onClick?: (args: { _event: MouseEvent }) => void 
 };
 
-class BasketView extends View<
+class BasketView extends AbstractView<
 	HTMLElement,
 	TBasketRenderArgs<object>,
 	TBasketEventHandlers
@@ -38,7 +38,7 @@ class BasketView extends View<
 	set items(value: TViewNested[]) {
 		this._itemsElement.replaceChildren(
 			...value.map(({ view, renderArgs }) =>
-				view instanceof View ? view.render(renderArgs) : view
+				view instanceof AbstractView ? view.render(renderArgs) : view
 			)
 		);
 	}

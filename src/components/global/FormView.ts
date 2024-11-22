@@ -1,4 +1,4 @@
-import { TViewConstructionArgs, View } from '../base/View';
+import { TViewConstructionArgs, AbstractView } from '../base/View';
 
 type TFormRenderArgs = {
 	isDisabled: boolean;
@@ -18,7 +18,7 @@ class FormView<
 	Element extends HTMLElement = HTMLFormElement,
 	RenderArgs extends object = TFormRenderArgs,
 	EventHandlers extends object = TFormEventHandlers
-> extends View<
+> extends AbstractView<
 	Element,
 	RenderArgs & TFormRenderArgs,
 	EventHandlers & TFormEventHandlers

@@ -1,4 +1,4 @@
-import { TViewConstructionArgs, TViewNested, View } from '../base/View';
+import { TViewConstructionArgs, TViewNested, AbstractView } from '../base/View';
 
 type TModalRenderArgs<T extends object> = {
 	content: TViewNested<T>;
@@ -9,7 +9,7 @@ enum ModalViewEvents {
 	OPEN = 'modal:open',
 }
 
-class ModalView extends View {
+class ModalView extends AbstractView {
 	protected _content: TViewNested;
 
 	protected _closeButtonElement: HTMLButtonElement;
@@ -60,7 +60,7 @@ class ModalView extends View {
 	set content(value: TViewNested | null) {
 		if (value) {
 			this._contentElement.replaceChildren(
-				value.view instanceof View
+				value.view instanceof AbstractView
 					? value.view.render(value.renderArgs)
 					: (value as unknown as (string | Node)[])
 			);

@@ -1,6 +1,6 @@
 import { IProduct } from '../../types';
 
-import { TViewConstructionArgs, View } from '../base/View';
+import { TViewConstructionArgs, AbstractView } from '../base/View';
 
 type TProductRenderArgs = Pick<IProduct, 'image' | 'title' | 'category'> & {
 	price: string;
@@ -15,7 +15,7 @@ class ProductView<
 	Element extends HTMLElement = HTMLElement,
 	RenderArgs extends object = TProductRenderArgs,
 	EventHandlers extends object = TProductEventHandlers
-> extends View<
+> extends AbstractView<
 	Element,
 	RenderArgs & TProductRenderArgs,
 	EventHandlers & TProductEventHandlers
